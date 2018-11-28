@@ -229,6 +229,8 @@
         </ul>
       </div>
     </header>
+      
+      
     <!--header end-->
     <!-- **********************************************************************************************************************************************************
         MAIN SIDEBAR MENU
@@ -353,6 +355,8 @@
       </div>
     </aside>
     <!--sidebar end-->
+      
+      
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
@@ -361,6 +365,7 @@
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-9 main-chart">
+              
             <!--CUSTOM CHART START -->
             <div class="border-head">
               <h3>Chiffre d'affaire </h3>
@@ -404,10 +409,14 @@
               </div>
             </div>
             <!--custom chart end-->
-            <div class="col-md-4 mb">
-              <!-- WHITE PANEL - TOP Produit -->
-              <div class="white-panel pn">
-                <div class="white-header">
+              
+              
+              
+              
+            <div class="col-md-3 mb">
+              <!-- TOP Produit -->
+              <div class="darkblue-panel pn">
+                <div class="darkblue-header">
                   <h5>Produit le plus vendu</h5>
                 </div>
                 <p><img src="img/bleu_chanel.jpg" class="img-circle" width="50"></p>
@@ -424,44 +433,69 @@
                 </div>
               </div>
             </div>
-            <div class="row mt">
-              <!-- /col-md-4-->
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5>Catégorie la plus vendu</h5>
+              
+            <div class="col-md-3 mb">
+              <!-- TOP Catégorie -->
+              <div class="green-panel pn">
+                <div class="green-header">
+                  <h5>Catégorie la plus vendue</h5>
+                </div>
+                <p><img src="img/bleu_chanel.jpg" class="img-circle" width="50"></p>
+                <p><b>BLEU DE CHANEL</b></p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="small mt">Nombre de vente</p>
+                    <p>200</p>
                   </div>
-                  <p><img src="img/bleu_chanel.jpg" class="img-circle" width="50"></p>
-                  <p><b>BLEU DE CHANEL</b></p>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <p class="small mt">Nombre de vente</p>
-                      <p>200</p>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="small mt">Profit total</p>
-                      <p>10000€</p>
-                    </div>
+                  <div class="col-md-6">
+                    <p class="small mt">Profit total</p>
+                    <p>10000€</p>
                   </div>
                 </div>
-                <!--  /darkblue panel -->
               </div>
-              <!-- /col-md-4 -->
-              <div class="col-md-4 col-sm-4 mb">
-                <!-- REVENUE PANEL -->
-                <div class="green-panel pn">
-                  <div class="green-header">
-                    <h5>REVENUE</h5>
-                  </div>
-                  <div class="chart mt">
-                    <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
-                  </div>
-                  <p class="mt"><b>$ 17,980</b><br/>Month Income</p>
-                </div>
-              </div>
-              <!-- /col-md-4 -->
             </div>
-
+              
+            <div class="col-md-3 mb">
+              <!-- LOW Produit -->
+              <div class="darkblue-panel pn">
+                <div class="darkblue-header">
+                  <h5>Produit le moins vendu</h5>
+                </div>
+                <p><img src="img/bleu_chanel.jpg" class="img-circle" width="50"></p>
+                <p><b>BLEU DE CHANEL</b></p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="small mt">Nombre de vente</p>
+                    <p>200</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="small mt">Profit total</p>
+                    <p>10000€</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+              
+            <div class="col-md-3 mb">
+              <!-- LOW Catégorie -->
+              <div class="green-panel pn">
+                <div class="green-header">
+                  <h5>Catégorie la moins vendue</h5>
+                </div>
+                <p><img src="img/bleu_chanel.jpg" class="img-circle" width="50"></p>
+                <p><b>BLEU DE CHANEL</b></p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="small mt">Nombre de vente</p>
+                    <p>200</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="small mt">Profit total</p>
+                    <p>10000€</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- /row -->
           </div>
           <!-- /col-lg-9 END SECTION MIDDLE -->
@@ -660,6 +694,7 @@
       console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
     }
   </script>
+    
 </body>
 
 </html>
