@@ -229,19 +229,19 @@ table.display tr.even.gradeC {
 }
 
 table.display tr.odd.gradeX {
-	background-color: #ffdddd;
+	background-color: #ffccbc;
 }
 
 table.display tr.even.gradeX {
-	background-color: #ffeeee;
+	background-color: #ffab91;
 }
 
 table.display tr.odd.gradeU {
-	background-color: #9e9e9e;
+	background-color: #bdbdbd;
 }
 
 table.display tr.even.gradeU {
-	background-color: #bdbdbd;
+	background-color: #e0e0e0;
 }
 
 
@@ -458,7 +458,7 @@ tr.even.gradeC td.sorting_3 {
 }
 
 tr.odd.gradeX td.sorting_1 {
-	background-color: #ffc4c4;
+	background-color: #ffab91;
 }
 
 tr.odd.gradeX td.sorting_2 {
@@ -470,7 +470,7 @@ tr.odd.gradeX td.sorting_3 {
 }
 
 tr.even.gradeX td.sorting_1 {
-	background-color: #ffd5d5;
+	background-color: #ff8a65;
 }
 
 tr.even.gradeX td.sorting_2 {
@@ -482,8 +482,7 @@ tr.even.gradeX td.sorting_3 {
 }
 
 tr.odd.gradeU td.sorting_1 {
-	background-color: #616161;
-    color: #fafafa;
+	background-color: #9e9e9e;
 }
 
 tr.odd.gradeU td.sorting_2 {
@@ -496,8 +495,7 @@ tr.odd.gradeU td.sorting_3 {
 
 
 tr.even.gradeU td.sorting_1 {
-	background-color: #757575;
-    color: #fafafa;
+	background-color: #bdbdbd;
 }
 
 tr.even.gradeU td.sorting_2 {
