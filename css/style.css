@@ -836,7 +836,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .custom-bar-chart {
-    height: 290px;
+    height: 40vh;
     margin-top: 20px;
     margin-left: 10px;
     position: relative;
@@ -889,13 +889,14 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     position: absolute;
     text-align: left;
     width: 100%;
+    height: 100%;
     font-size: 11px;
 }
 
 .y-axis li {
     border-top: 1px dashed #dbdce0;
     display: block;
-    height: 58px;
+    height: 20%;
     width: 100%;
 }
 
@@ -929,8 +930,12 @@ PANELS CONFIGURATIONS
 /*Panel Size*/
 
 .pn {
-	height: 250px;
+    height: auto;
+	min-height: 250px;
+    min-width: 200px;
 	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 
