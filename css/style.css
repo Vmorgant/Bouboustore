@@ -974,7 +974,8 @@ PANELS CONFIGURATIONS
 
 .darkblue-panel {
 	text-align: center;
-	background: #444c57;
+    background: #444c57;
+    color: #fafafa;
 }
 .darkblue-panel .darkblue-header {
 	background: transparent;
