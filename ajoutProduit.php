@@ -3,14 +3,14 @@
 	include_once 'connect.php';
 ?>
 <html lang="fr">
-	<div class="content">
+	<div>
 		<div> 
 				<form action="produit.php" method="post">
                     <p>Nom : <input type="text" name="nom" required /></p>
                     <p>Descriptif: <input type="text" name="descriptif" required /></p>
                     <p>Commentaire: <input type="text" name="commentaire" required /></p>
                     <p>Image: <input type="text" name="image" required /></p>
-                    <input list="categorie" type="text" name="choixCategorie" id="choixCategorie" required></p>
+                    <p>Categorie : <input list="categorie" type="text" name="choixCategorie" id="choixCategorie" required></p>
                         <datalist id="categorie">	
                                 <?php
                                     $QueryCategorie = "SELECT DISTINCT categorieProduit FROM `categorie`";
