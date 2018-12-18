@@ -7,16 +7,16 @@
 		<div> 
 				<form action="produit.php" method="post">
                     <p>Nom : <input type="text" name="nom" required /></p>
-                    <p>Descriptif: <input type="text" name="descriptif" required /></p>
-                    <p>Commentaire: <input type="text" name="commentaire" required /></p>
-                    <p>Image: <input type="text" name="image" required /></p>
+                    <p>Descriptif: <input type="text" name="descriptif" /></p>
+                    <p>Commentaire: <input type="text" name="commentaire" /></p>
+                    <p>Image: <input type="text" name="image" /></p>
                     <p>Categorie : <input list="categorie" type="text" name="choixCategorie" id="choixCategorie" required></p>
                         <datalist id="categorie">	
                                 <?php
                                     $QueryCategorie = "SELECT DISTINCT `categorieProduit` FROM `categorie`";
                                     $Categorie= $Connect->query($QueryCategorie);
+                                    $i=0;
                                     while ($Data = mysqli_fetch_array($Categorie) ){
-                                        $i=0;
                                         echo "<option value='$Data[$i]'>";
                                         $i++;
                                     }
@@ -28,8 +28,8 @@
                                 <?php
                                     $QueryFournisseur = "SELECT DISTINCT `nom` FROM `fournisseur`";
                                     $Fournisseur= $Connect->query($QueryFournisseur);
+                                    $i=0;
                                     while ($Data = mysqli_fetch_array($Fournisseur) ){
-                                        $i=0;
                                         echo "<option value='$Data[$i]'>";
                                         $i++;
                                     }
@@ -41,8 +41,8 @@
                                 <?php
                                     $QueryDevise = "SELECT DISTINCT `abreviation` FROM `devise`";
                                     $Devise= $Connect->query($QueryDevise);
+                                    $i=0;
                                     while ($Data = mysqli_fetch_array($Devise) ){
-                                        $i=0;
                                         echo "<option value='$Data[$i]'>";
                                         $i++;
                                     }
