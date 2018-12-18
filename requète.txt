@@ -1,0 +1,27 @@
+//Vente par produit
+
+
+
+//Vente par catégorie
+
+SELECT `id_categorie`,`id_produit` FROM `categorie` JOIN SELECT id_produit,COUNT(*)*quantite AS quantite FROM `Livraison`  GROUP BY `id_produit`  
+
+//maximum de vente par...
+Select MAX(quantite) FROM ...
+
+//minimum de vente par ...
+SELECT MIN(nom_colonne) FROM ...
+
+//id_produit+image 
+
+SELECT `id_produit`,`image` from `produit`
+
+//Recupération des produits et noms fournisseur pour affichage
+
+SELECT `nom` from `produit` JOIN SELECT `nom_fournisseur` FROM `fournisseur` WHERE `id_fournisseur` IN SELECT `id_fournisseur` from `propose`;
+
+//Recupération des prix publics
+
+SELECT `prix` FROM `prix_public`
+
+//Recupération des prix de ventes
