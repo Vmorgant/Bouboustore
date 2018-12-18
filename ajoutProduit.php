@@ -13,7 +13,7 @@
                     <p>Categorie : <input list="categorie" type="text" name="choixCategorie" id="choixCategorie" required></p>
                         <datalist id="categorie">	
                                 <?php
-                                    $QueryCategorie = "SELECT DISTINCT categorieProduit FROM `categorie`";
+                                    $QueryCategorie = "SELECT DISTINCT `categorieProduit` FROM `categorie`";
                                     $Categorie= $Connect->query($QueryCategorie);
                                     while ($Data = mysqli_fetch_array($Categorie) ){
                                         $i=0;
@@ -21,7 +21,34 @@
                                         $i++;
                                     }
                                 ?>
-                        </datalist>
+						</datalist>
+						
+						<p>Fournisseur : <input list="fournisseur" type="text" name="choixFournisseur" id="choixFournisseur" required></p>
+                        <datalist id="fournisseur">	
+                                <?php
+                                    $QueryFournisseur = "SELECT DISTINCT `nom` FROM `fournisseur`";
+                                    $Fournisseur= $Connect->query($QueryFournisseur);
+                                    while ($Data = mysqli_fetch_array($Fournisseur) ){
+                                        $i=0;
+                                        echo "<option value='$Data[$i]'>";
+                                        $i++;
+                                    }
+                                ?>
+						</datalist>
+					<p>Prix achat: <input type="number" name="prix" required /></p>
+					<p>Devise : <input list="devise" type="text" name="choixDevise" id="choixDevise" required></p>
+                        <datalist id="devise">	
+                                <?php
+                                    $QueryDevise = "SELECT DISTINCT `abreviation` FROM `devise`";
+                                    $Devise= $Connect->query($QueryDevise);
+                                    while ($Data = mysqli_fetch_array($Devise) ){
+                                        $i=0;
+                                        echo "<option value='$Data[$i]'>";
+                                        $i++;
+                                    }
+                                ?>
+						</datalist>
+					<p><input type="submit" value="Valider" name = "Valider"></p>
 				</form>
 		</div>
 		<div>

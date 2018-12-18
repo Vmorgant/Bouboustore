@@ -24,6 +24,7 @@
                     <p>Date de début de contrat : <input type="date" name="dateDebut" required /></p>
                     <p>Date de fin de contrat : <input type="date" name="dateFin" required /></p>
                     <p>Numéro de CB <input type="text" name="numCB" /></p>
+                    <p><input type="submit" value="Valider" name = "Valider"></p>
 				</form>
 		</div>
 </html>

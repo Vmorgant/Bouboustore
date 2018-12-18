@@ -29,6 +29,7 @@
                                     }
                                     if($present==0){
                                         $QueryAjout = "INSERT INTO `categorieProduit`(`nom`) VALUES ('".$Categorie."')";
+                                        $Result= $Connect->query($QueryAjout);
                                     }
 	header("location:ajoutProduit.php");
 ?>
