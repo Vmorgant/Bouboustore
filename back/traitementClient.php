@@ -1,5 +1,5 @@
 <?php
-	include_once 'connect.php';
+	include_once './connect.php';
 	$Nom=$_POST['nom'];
 	$Prenom=$_POST['prenom'];
 	$Mail=$_POST['email'];
