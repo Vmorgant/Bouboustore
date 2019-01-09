@@ -8,7 +8,7 @@
     $Fournisseur= $_POST['choixFournisseur'];
     $Prix= $_POST['prix'];
     $Devise= $_POST['choixDevise'];
-	$QueryAjout = "INSERT INTO `produit`(`nom`, `descriptif`, `commentaire`, `image`, `categorie`) VALUES ('".$Nom."',"'.$Descriptif.'",'".$Commentaire."','".$Image."','".$Categorie."')";
+	$QueryAjout = "INSERT INTO `produit`(`nom`, `descriptif`, `commentaire`, `image`, `categorie`) VALUES ('".$Nom."','".$Descriptif."','".$Commentaire."','".$Image."','".$Categorie."')";
 	$Result= $Connect->query($QueryAjout);
 
     $QueryCategorie = "SELECT DISTINCT nom FROM `categorieProduit`";
@@ -50,5 +50,5 @@
         $DeviseList= $Connect->query($QueryDevise);
     }
    
-	header("location:ajoutProduit.php");
+	header("location:../ajoutProduit.php");
 ?>
