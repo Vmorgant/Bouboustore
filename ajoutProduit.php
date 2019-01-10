@@ -41,7 +41,7 @@
             <h3><i class="fa fa-angle-right"></i> Ajout de Produit </h3>
         <div class="row mb table-sized"> 
 		<div> 
-				<form action="/back/traitementProduit.php" method="post">
+				<form action="back/traitementProduit.php" method="post">
                     <p>Nom : <input type="text" name="nom" required /></p>
                     <p>Descriptif: <input type="text" name="descriptif" /></p>
                     <p>Commentaire: <input type="text" name="commentaire" /></p>
