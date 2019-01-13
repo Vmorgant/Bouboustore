@@ -8,6 +8,9 @@
         "content" : "<div class=\"text-center\"><p>&copy; Copyrights <strong>Dashio</strong>. All Rights Reserved</p><div class=\"credits\">Created with Dashio template by <a href=\"https://templatemag.com/\">TemplateMag</a></div><a href=\"#\" class=\"go-top\"><i class=\"fa fa-angle-up\"></i></a></div>"
     },
     "aside" : {
-        "content" : "<div id=\"sidebar\" class=\"nav-collapse \"><ul class=\"sidebar-menu\" id=\"nav-accordion\"><p class=\"centered\"><a href=\"profile.html\"><img src=\"img/ui-sam.jpg\" class=\"img-circle\" width=\"80\"></a></p><h5 lass=\"centered\">Sam Soffes</h5><li class=\"mt\"><a href=\"home.html\"><i class=\"fa fa-dashboard\"></i><span>Dashboard</span></a></li><li class=\"sub-menu\"><a href=\"produits.html\"><i class=\"fa fa-desktop\"></i><span>Produits</span></a></li><li><a href=\"contact.html\"><i class=\"fa fa-map-marker\"></i><span>Nous contacter</span></a></li></ul></div>"
+        "content" : "<div id=\"sidebar\" class=\"nav-collapse \"><ul class=\"sidebar-menu\" id=\"nav-accordion\"><p class=\"centered\"><a href=\"profile.html\"><img src=\"img/ui-sam.jpg\" class=\"img-circle\" width=\"80\"></a></p><h5 lass=\"centered\">Sam Soffes</h5><li class=\"mt\"><a href=\"home.php\"><i class=\"fa fa-dashboard\"></i><span>Dashboard</span></a></li><li class=\"sub-menu\"><a href=\"produits.php\"><i class=\"fa fa-desktop\"></i><span>Produits</span></a></li><li class=\"sub-menu\"><a href=\"ajoutClient.php\"><i class=\"fa fa-user\"></i><span>Ajouter un client</span></a></li>    <li class=\"sub-menu\"><a href=\"ajoutProduits.php\"><i class=\"fa fa-product-hunt\"></i><span>Ajouter un produit</span></a></li></ul></div>"
     }
+
+}
+
 }

@@ -20,4 +20,5 @@
 	}
 	$Query = "INSERT INTO `client`(`nom`, `prenom`, `mail`, `telephone`, `langue`, `date_debut_contrat`, `date_fin_contrat`, `numero_cb`) VALUES ('".$Nom."','".$Prenom."','".$Mail."','".$Telephone."','".$Langue."','".$DateDebut."','".$DateFin."','".$NumCB."')";
 	$Result= $Connect->query($Query);
+	header("location:../ajoutProduit.php");
 ?>
