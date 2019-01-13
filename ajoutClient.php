@@ -86,13 +86,13 @@
                     while ($Data = mysqli_fetch_array($ClientList) ){
                         echo("
                         <tr>
-                            <td class="center">".$Data[0]."</td>
-                            <td class="center">".$Data[1]."</td>
-                            <td class="center">".$Data[2]."</td>
-                            <td class="center">".$Data[3]."</td>
-                            <td class="center">".$Data[4]."</td>
-                            <td class="center">".$Data[5]."</td>
-                            <td class="center">".$Data[6]."</td>
+                            <td class='center'>".$Data[0]."</td>
+                            <td class='center'>".$Data[1]."</td>
+                            <td class='center'>".$Data[2]."</td>
+                            <td class='center'>".$Data[3]."</td>
+                            <td class='center'>".$Data[4]."</td>
+                            <td class='center'>".$Data[5]."</td>
+                            <td class='center'>".$Data[6]."</td>
                         </tr>
                         ")
                     }
