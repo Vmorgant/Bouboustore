@@ -49,9 +49,7 @@
                                                 $QueryLangue = "SELECT DISTINCT langue FROM `client`";
                                                 $Langue= $Connect->query($QueryLangue);
                                                 while ($Data = mysqli_fetch_array($Langue) ){
-                                                    $i=0;
-                                                    echo "<option value='$Data[$i]'>";
-                                                    $i++;
+                                                    echo "<option value='.$Data[0].'>";
                                                 }
                                             ?>
                                     </datalist>
@@ -81,7 +79,7 @@
                 </thead>
                 <tbody>
                 <?php
-                    $QueryClient = "SELECT nom,prenom,mail,telephone,langue,date_fin_contrat,point_fidelite FROM Client";
+                    $QueryClient = "SELECT nom,prenom,mail,telephone,langue,date_fin_contrat,point_fidelite FROM client";
                     $clientList= $Connect->query($QueryClient);
                     while ($Data = mysqli_fetch_array($ClientList) ){
                         echo("
