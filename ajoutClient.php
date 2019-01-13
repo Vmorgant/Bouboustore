@@ -43,16 +43,13 @@
                                 <p>Prenom: <input type="text" name="prenom" required /></p>
                                 <p>Mail: <input type="email" name="email" required /></p>
                                 <p>Telephone: <input type="tel" name="tel" required /></p>
-                                <p>Langue : <input list="langue" type="text" name="langue" id="langue"></p>
-                                    <datalist id="langue">	
-                                            <?php
-                                                $QueryLangue = "SELECT DISTINCT langue FROM `client`";
-                                                $Langue= $Connect->query($QueryLangue);
-                                                while ($Data = mysqli_fetch_array($Langue) ){
-                                                    echo "<option value='.$Data[0].'>";
-                                                }
-                                            ?>
-                                    </datalist>
+                                <p>Langue : <select name="langue">
+												<option value="fr">Français</option>
+												<option value="ang">Anglais</option>
+												<option value="esp">Espagnol</option>
+												<option value="ru">Russe</option>
+								  			</select>
+								</p>
                                 <p>Date de début de contrat : <input type="date" name="dateDebut" required /></p>
                                 <p>Date de fin de contrat : <input type="date" name="dateFin" required /></p>
                                 <p>Numéro de CB <input type="text" name="numCB" /></p>
@@ -81,7 +78,7 @@
                 <?php
                     $QueryClient = "SELECT nom,prenom,mail,telephone,langue,date_fin_contrat,point_fidelite FROM client";
                     $clientList= $Connect->query($QueryClient);
-                    while ($Data = mysqli_fetch_array($ClientList) ){
+                    while ($Data = mysqli_fetch_array($clientList) ){
                         echo("
                         <tr>
                             <td class='center'>".$Data[0]."</td>
