@@ -57,134 +57,42 @@ include_once 'connect.php';
               <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
                   <tr>
-                    <th>Produit</th>
+                    <th>Nom</th>
+                    <th>Catégorie</th>
+                    <th>Prix de vente</th>
                     <th>Fournisseur</th>
-                    <th class="hidden-phone">Prix d'achat</th>
-                    <th class="hidden-phone">Prix de vente (HT)</th>
-                    <th class="hidden-phone">Stock</th>
+                    <th>Marge</th>
+                    <th>Prix achat</th>
+                    <th class="hidden-phone">Descriptif</th>
                   </tr>
                 </thead>
                   
                 <tbody>
-                    <!--    gradeA = vert
-                            gradeC = bleu-violet
-                            gradeU = gris
-                            gradeX = rouge
-                            gradeW = blanc
-                    -->
-                    <tr class="gradeU">
-                        <td class="center">Chanel N°5 20 ml</td>
-                        <td class="center">Nocibé</td>
-                        <td class="center hidden-phone">39</td>
-                        <td class="center hidden-phone">45</td>
-                        <td class="center hidden-phone">0</td>
-                    </tr>
-                    
-                    <tr class="gradeU">
-                        <td class="center">Hugo Boss 30 ml </td>
-                        <td class="center">Nocibé</td>
-                        <td class="center hidden-phone">35</td>
-                        <td class="center hidden-phone">46.10</td>
-                        <td class="center hidden-phone">0</td>
-                    </tr>
-                    
-                    <tr class="gradeU">
-                        <td class="center">Hugo Boss 30 ml </td>
-                        <td class="center">Makeup.com</td>
-                        <td class="center hidden-phone">40</td>
-                        <td class="center hidden-phone">46</td>
-                        <td class="center hidden-phone">0</td>
-                    </tr>
-                    
-                    <tr class="gradeU">
-                        <td class="center">Chanel N°5 20 ml</td>
-                        <td class="center">Nocibé</td>
-                        <td class="center hidden-phone">39</td>
-                        <td class="center hidden-phone">45</td>
-                        <td class="center hidden-phone">0</td>
-                    </tr>
-                    
-                    <tr class="gradeX">
-                        <td class="center"> HUGO WOMAN 30 ml</td>
-                        <td class="center">Makeup.com</td>
-                        <td class="center hidden-phone">65</td>
-                        <td class="center hidden-phone">80</td>
-                        <td class="center hidden-phone">3</td>
-                    </tr>
-                    
-                    <tr class="gradeX">
-                        <td class="center">HUGO WOMAN 30 ml</td>
-                        <td class="center">Nocibé</td>
-                        <td class="center hidden-phone">50</td>
-                        <td class="center hidden-phone">80</td>
-                        <td class="center hidden-phone">4</td>
-                    </tr>
-                    
-                    
-                    <tr class="gradeX">
-                        <td class="center">Boss Bottled Night 20 ml</td>
-                        <td class="center">Nocibé</td>
-                        <td class="center hidden-phone">65</td>
-                        <td class="center hidden-phone">80</td>
-                        <td class="center hidden-phone">5</td>
-                    </tr>
-                    
-                    
-                    <tr class="gradeX">
-                        <td class="center">Boss The Scent Intense For Her 30 ml</td>
-                        <td class="center">MTFBWU.com</td>
-                        <td class="center hidden-phone">79</td>
-                        <td class="center hidden-phone">12O</td>
-                        <td class="center hidden-phone">4</td>
-                    </tr>
-                    
-                    <tr class="gradeW">
-                        <td class="center">Boss Bottled Night 20 ml</td>
-                        <td class="center">MTFBWU.com</td>
-                        <td class="center hidden-phone">89</td>
-                        <td class="center hidden-phone">120</td>
-                        <td class="center hidden-phone">20</td>
-                    </tr>
-                    
-                    <tr class="gradeW">
-                        <td class="center">La Petite Robe Noire</td>
-                        <td class="center">Nocibé</td>
-                        <td class="center hidden-phone">90</td>
-                        <td class="center hidden-phone">120</td>
-                        <td class="center hidden-phone">50</td>
-                    </tr>
-                    
-                    <tr class="gradeW">
-                        <td class="center">La Petite Robe Noire</td>
-                        <td class="center">MTFBWU.com</td>
-                        <td class="center hidden-phone">100</td>
-                        <td class="center hidden-phone">150</td>
-                        <td class="center hidden-phone">20</td>
-                    </tr>
-                    
-                    <tr class="gradeW">
-                        <td class="center">Mon Guerlain</td>
-                        <td class="center">MTFBWU.com</td>
-                        <td class="center hidden-phone">200</td>
-                        <td class="center hidden-phone">250</td>
-                        <td class="center hidden-phone">30</td>
-                    </tr>
-                    
-                    <tr class="gradeW">
-                        <td class="center">Mon Guerlain</td>
-                        <td class="center">Nocibé</td>
-                        <td class="center hidden-phone">120</td>
-                        <td class="center hidden-phone">250</td>
-                        <td class="center hidden-phone">15</td>
-                    </tr>
-                    
-                    <tr class="gradeW">
-                        <td class="center">Mon Guerlain</td>
-                        <td class="center">Makeup.com</td>
-                        <td class="center hidden-phone">120</td>
-                        <td class="center hidden-phone">250</td>
-                        <td class="center hidden-phone">30</td>
-                    </tr>
+                  <?php>
+                    $QueryProduit = "SELECT categorieProduit.nom AS "catégorie",produit.nom,produit.descriptif,prixPublic.prix AS "prix de vente" ,fournisseur.nom AS "fournisseur",prixPublic.marge,prixFournisseur.prix AS "prix d'achat" FROM produit INNER JOIN categorieProduit ON produit.id_categorie = categorieProduit.id_categorie INNER JOIN prixPublic ON produit.id_produit = prixPublic.id_produit INNER JOIN propose ON propose.id_produit=produit.id_produit INNER JOIN fournisseur ON fournisseur.id_fournisseur=propose.id_fournisseur INNER JOIN prixFournisseur ON prixFournisseur.id_prix_fournisseur=propose.id_prix_fournisseur";
+                    $res=$Connect->query($QueryProduit);
+                    while ($Produit = mysqli_fetch_assoc($res) ){
+                      if($Produit["prix de vente"] > $Produit["prix d'achat"]{
+                        $grade="gradeA";
+                      }
+                      else if($Produit["prix de vente"] < $Produit["prix d'achat"]{
+                        $grade="gradeX";
+                      }
+                      else{
+                        $grade="gradeW";
+                      }
+                      echo"
+                      <tr class=".$grade.">
+                        <td class="center">$Produit["nom"]</td>
+                        <td class="center">$Produit["catégorie"]</td>
+                        <td class="center ">$Produit["prix de vente"]</td>
+                        <td class="center ">$Produit["fournisseur"]</td>
+                        <td class="center ">$Produit["marge"]</td>
+                        <td class="center ">$Produit["prix d'achat"]</td>
+                        <td class="center hidden-phone">$Produit["descriptif"]</td>
+                      </tr>"
+                    }
+                  <?>  
                 </tbody>
               </table>
             </div>

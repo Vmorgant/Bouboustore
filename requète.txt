@@ -33,9 +33,8 @@ SELECT `nom` from `produit` JOIN SELECT `nom_fournisseur` FROM `fournisseur` WHE
 
 SELECT `prix` FROM `prix_public`
 
-//Recupération des prix de ventes
-
-//
-Insertion client
+//Récupération des infos produits 
+SELECT categorieProduit.nom AS "catégorie",produit.nom,produit.descriptif,prixPublic.prix AS "prix de vente" ,fournisseur.nom,prixPublic.marge,prixFournisseur.prix AS "prix d'achat" FROM produit INNER JOIN categorieProduit ON produit.id_categorie = categorieProduit.id_categorie INNER JOIN prixPublic ON produit.id_produit = prixPublic.id_produit INNER JOIN propose ON propose.id_produit=produit.id_produit INNER JOIN fournisseur ON fournisseur.id_fournisseur=propose.id_fournisseur INNER JOIN prixFournisseur ON prixFournisseur.id_prix_fournisseur=propose.id_prix_fournisseur
+//Insertion client
 
 INSERT INTO `client` (`id_client`, `nom`, `prenom`, `mail`, `telephone`, `langue`, `date_debut_contrat`, `date_fin_contrat`, `point_fidelite`, `numero_cb`) VALUES (NULL, 'Jean', 'Dupond', 'jean.dupond@gmail.com', '0606060606', 'fr', '1999-08-07 00:00:00', '2020-01-05 00:00:00', '0', NULL);
