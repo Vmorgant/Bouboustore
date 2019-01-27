@@ -1,6 +1,10 @@
 
 <?php
-	include_once 'connect.php';
+  include_once 'connect.php';
+  $QueryPireVente = "`nom`,`image`,`quantite` from `produit` NATURAL JOIN (SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison` GROUP BY `id_produit` ORDER BY `quantite` ASC LIMIT 1) AS maxProduit";
+  $PireVente= mysqli_fetch_array($Connect->query($QueryPireVente));   
+  $QueryMeilleurVente = "`nom`,`image`,`quantite` from `produit` NATURAL JOIN (SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison` GROUP BY `id_produit` ORDER BY `quantite` DEC LIMIT 1) AS maxProduit";
+  $MeilleureVente= mysqli_fetch_array($Connect->query($QueryPireVente));              
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -83,21 +87,18 @@
             </div>
             <!--custom chart end-->
               
-              
-              
-              
             <div class="col-md-3 mb">
               <!-- TOP Produit -->
               <div class="darkblue-panel pn">
                 <div class="darkblue-header">
                   <h5>Produit le plus vendu</h5>
                 </div>
-                <p><img src="img/bleu_chanel.jpg" class="img-circle" width="50"></p>
-                <p><b>BLEU DE CHANEL</b></p>
+                <p><img src=<?php echo $MeilleureVente["image"]; ?> class="img-circle" width="50"></p>
+                <p><b><?php echo $MeilleureVente["nom"]; ?></b></p>
                 <div class="row">
                   <div class="col-md-6">
                     <p class="small mt">Nombre de vente</p>
-                    <p>20</p>
+                    <p><?php echo $MeilleureVente["quantite"]; ?></p>
                   </div>
                   <div class="col-md-6">
                     <p class="small mt">Profit total</p>
@@ -134,12 +135,12 @@
                 <div class="darkblue-header">
                   <h5>Produit le moins vendu</h5>
                 </div>
-                <p><img src="img/farmasi.png" class="img-circle" width="50"></p>
-                <p><b>Farmasi rouge intense</b></p>
+                <p><img src=<?php echo $PireVente["image"]; ?> class="img-circle" width="50"></p>
+                <p><b><?php echo $PireVente["nom"]; ?></b></p>
                 <div class="row">
                   <div class="col-md-6">
                     <p class="small mt">Nombre de vente</p>
-                    <p>3</p>
+                    <p><?php echo $PireVente["quantite"]; ?></p>
                   </div>
                   <div class="col-md-6">
                     <p class="small mt">Profit total</p>

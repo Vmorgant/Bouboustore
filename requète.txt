@@ -1,20 +1,29 @@
-//Vente par produit
+﻿//Vente par produit
 
+SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison`  GROUP BY `id_produit` 
 
 
 //Vente par catégorie
 
-SELECT `id_categorie`,`id_produit` FROM `categorie` JOIN SELECT id_produit,COUNT(*)*quantite AS quantite FROM `Livraison`  GROUP BY `id_produit`  
+SELECT `id_categorie`,`id_produit` FROM `categorie` JOIN SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison`  GROUP BY `id_produit`  
 
 //maximum de vente par...
 Select MAX(quantite) FROM ...
 
+//Produit le plus vendu
+
+SELECT `nom`,`image`,`quantite` from `produit` NATURAL JOIN (SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison` GROUP BY `id_produit` ORDER BY `quantite` DESC LIMIT 1) AS maxProduit
+
 //minimum de vente par ...
 SELECT MIN(nom_colonne) FROM ...
 
+//Produit le moins vendu
+SELECT `nom`,`image`,`quantite` from `produit` NATURAL JOIN (SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison` GROUP BY `id_produit` ORDER BY `quantite` ASC LIMIT 1) AS maxProduit
+
+
 //id_produit+image 
 
-SELECT `id_produit`,`image` from `produit`
+SELECT `id_produit`,`image` from `produit` WHERE id_produit= ...
 
 //Recupération des produits et noms fournisseur pour affichage
 
@@ -25,3 +34,8 @@ SELECT `nom` from `produit` JOIN SELECT `nom_fournisseur` FROM `fournisseur` WHE
 SELECT `prix` FROM `prix_public`
 
 //Recupération des prix de ventes
+
+//
+Insertion client
+
+INSERT INTO `client` (`id_client`, `nom`, `prenom`, `mail`, `telephone`, `langue`, `date_debut_contrat`, `date_fin_contrat`, `point_fidelite`, `numero_cb`) VALUES (NULL, 'Jean', 'Dupond', 'jean.dupond@gmail.com', '0606060606', 'fr', '1999-08-07 00:00:00', '2020-01-05 00:00:00', '0', NULL);
