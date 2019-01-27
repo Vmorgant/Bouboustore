@@ -26,16 +26,24 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
 </head>
+<body>
 <section id="container">
-      <header id="header"></header>
-      
-      <aside id="asideJS"></aside>
+    <header id="header">
+        <?php
+        include("header.html");
+        ?>
+    </header>
+
+    <aside id="asideJS">
+        <?php
+        include("aside.html");
+        ?>
+    </aside>
    
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
-      <main>
     <section id="main-content">
         <section class="wrapper">
             <h3><i class="fa fa-angle-right"></i> Ajout de Produit </h3>
@@ -108,6 +116,13 @@
             </div>
         </section>
     </section>
+</section>
+          <footer id="footer site-footer  ">
+              <?php
+              include("footer.html");
+              ?>
+          </footer>
+</body>
 </html>
 <?php
 	mysqli_close($Connect);

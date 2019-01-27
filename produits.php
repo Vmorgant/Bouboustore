@@ -112,11 +112,9 @@ include_once 'connect.php';
           </main>
     <!-- /MAIN CONTENT -->
     <!--main content end-->
-    <!--footer start-->
       <?php
         include_once 'footer.html';
       ?>
-    <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>

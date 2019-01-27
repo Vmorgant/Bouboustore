@@ -28,6 +28,18 @@
   <link href="css/style-responsive.css" rel="stylesheet">
 </head>
 <body>
+<header id="header">
+    <?php
+    include("header.html");
+    ?>
+</header>
+
+<aside id="asideJS">
+    <?php
+    include("aside.html");
+    ?>
+</aside>
+
     <section id="container">
         <header id="header"></header>
         
@@ -89,7 +101,7 @@
                             <td class='center'>".$Data[5]."</td>
                             <td class='center'>".$Data[6]."</td>
                         </tr>
-                        ")
+                        ");
                     }
                 ?>
                 </tbody>
@@ -97,6 +109,11 @@
             </div>
         </div>                      
         </section>
+        <footer id="footer site-footer  ">
+            <?php
+            include("footer.html");
+            ?>
+        </footer>
     </body>
 </html>
 <?php

@@ -39,9 +39,17 @@
 
 <body>
   <section id="container">
-    <header id="header"></header>
+    <header id="header">
+        <?php
+        include("header.html");
+        ?>
+    </header>
       
-    <aside id="asideJS"></aside>
+    <aside id="asideJS">
+        <?php
+        include("aside.html");
+        ?>
+    </aside>
 
     <section id="main-content">
       <section class="wrapper">
@@ -236,7 +244,11 @@
     </section>
     <!--main content end-->
     <!--footer start-->
-    <footer id="footer"></footer>
+    <footer id="footer site-footer  ">
+        <?php
+        include("footer.html");
+        ?>
+    </footer>
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
