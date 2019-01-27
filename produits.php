@@ -5,27 +5,29 @@ include_once 'connect.php';
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="Dashboard">
-  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Dashio - Bootstrap Admin Template</title>
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Bootstrap core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!--external css-->
-  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-  <link href="lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
-  <link rel="stylesheet" href="lib/advanced-datatable/css/DT_bootstrap.css" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/advanced-datatable/css/DT_bootstrap.css" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/table-responsive.css" rel="stylesheet" />
+
 
   <!-- =======================================================
     Template Name: Dashio
@@ -37,9 +39,13 @@ include_once 'connect.php';
 
 <body>
   <section id="container">
-      <header id="header"></header>
-      
-      <aside id="asideJS"></aside>
+      <?php
+        include_once 'header.html';
+      ?>
+
+      <?php
+        include_once 'aside.html';
+      ?>
    
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
@@ -107,8 +113,9 @@ include_once 'connect.php';
     <!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
-    <footer id="footer">
-    </footer>
+      <?php
+        include_once 'footer.html';
+      ?>
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
