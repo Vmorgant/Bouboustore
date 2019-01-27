@@ -59,7 +59,7 @@
                                 <?php
                                     $QueryCategorie = "SELECT DISTINCT `categorieProduit` FROM `categorie`";
                                     $Categorie= $Connect->query($QueryCategorie);
-                                    while ($Data = mysqli_fetch_array($Categorie) ){
+                                    while ($Data = $Categorie->fetch_array) {
                                         echo "<option value='.$Data[0].'>";
                                     }
                                 ?>
@@ -70,7 +70,8 @@
                                 <?php
                                     $QueryFournisseur = "SELECT DISTINCT `nom` FROM `fournisseur`";
                                     $Fournisseur= $Connect->query($QueryFournisseur);
-                                    while ($Data = mysqli_fetch_array($Fournisseur) ){
+									
+                                    while ($Data = $Fournisseur->fetch_array){
                                         echo "<option value=.'$Data[0].'>";
                                     }
                                 ?>
@@ -109,7 +110,7 @@
                     $QueryProduit = "SELECT `nom`,`descriptif`,`commentaire`,`image` FROM `produit`";
                     $Result= $Connect->query($QueryProduit);
                     while ($Produit = mysqli_fetch_array($Result) ){
-                        echo "<tr><td>".$Produit[0]."</td><td>".$Produit[1]."</td><td>".$Produit[2]."</td><td><img src=".$Produit[3]."></td></tr>";
+                        echo "<tr><td>".utf8_encode($Produit[0])."</td><td>".$Produit[1]."</td><td>".$Produit[2]."</td><td><img src=".$Produit[3]." class=\"img-circle\" width=\"50\"></td></tr>";
                     }
                 ?>
               </table>
