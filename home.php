@@ -1,21 +1,26 @@
 
 <?php
   include_once 'connect.php';
-  $QueryPireVente = "`nom`,`image`,`quantite` from `produit` NATURAL JOIN (SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison` GROUP BY `id_produit` ORDER BY `quantite` ASC LIMIT 1) AS maxProduit";
-  $PireVente= mysqli_fetch_array($Connect->query($QueryPireVente));   
-  $QueryMeilleurVente = "`nom`,`image`,`quantite` from `produit` NATURAL JOIN (SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison` GROUP BY `id_produit` ORDER BY `quantite` DEC LIMIT 1) AS maxProduit";
-  $MeilleureVente= mysqli_fetch_array($Connect->query($QueryPireVente));              
+  $QueryPireVente = "SELECT `nom`,`image`,`quantite` from `produit` NATURAL JOIN (SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison` GROUP BY `id_produit` ORDER BY `quantite` ASC LIMIT 1) AS maxProduit";
+  $res=$Connect->query($QueryPireVente);
+  if ($res) {
+  	$PireVente= $res->fetch_assoc();
+  }
+  $QueryMeilleureVente = "SELECT `nom`,`image`,`quantite` from `produit` NATURAL JOIN (SELECT id_produit,COUNT(*)*quantite AS quantite FROM `livraison` GROUP BY `id_produit` ORDER BY `quantite` DESC LIMIT 1) AS maxProduit";
+  $res2=$Connect->query($QueryMeilleureVente);
+  if ($res2){
+	  $MeilleureVente = $res2->fetch_assoc();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>Bouboustore</title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
