@@ -68,31 +68,31 @@ include_once 'connect.php';
                 </thead>
                   
                 <tbody>
-                  <?php>
-                    $QueryProduit = "SELECT categorieProduit.nom AS "catégorie",produit.nom,produit.descriptif,prixPublic.prix AS "prix de vente" ,fournisseur.nom AS "fournisseur",prixPublic.marge,prixFournisseur.prix AS "prix d'achat" FROM produit INNER JOIN categorieProduit ON produit.id_categorie = categorieProduit.id_categorie INNER JOIN prixPublic ON produit.id_produit = prixPublic.id_produit INNER JOIN propose ON propose.id_produit=produit.id_produit INNER JOIN fournisseur ON fournisseur.id_fournisseur=propose.id_fournisseur INNER JOIN prixFournisseur ON prixFournisseur.id_prix_fournisseur=propose.id_prix_fournisseur";
+                  <?php
+                    $QueryProduit = "SELECT categorieProduit.nom AS \"catégorie\",produit.nom,produit.descriptif,prixPublic.prix AS \"prix de vente\" ,fournisseur.nom AS \"fournisseur\",prixPublic.marge,prixFournisseur.prix AS \"prix d'achat\" FROM produit INNER JOIN categorieProduit ON produit.id_categorie = categorieProduit.id_categorie INNER JOIN prixPublic ON produit.id_produit = prixPublic.id_produit INNER JOIN propose ON propose.id_produit=produit.id_produit INNER JOIN fournisseur ON fournisseur.id_fournisseur=propose.id_fournisseur INNER JOIN prixFournisseur ON prixFournisseur.id_prix_fournisseur=propose.id_prix_fournisseur";
                     $res=$Connect->query($QueryProduit);
                     while ($Produit = mysqli_fetch_assoc($res) ){
-                      if($Produit["prix de vente"] > $Produit["prix d'achat"]{
+						 if($Produit["prix de vente"] > $Produit["prix d'achat"]){
                         $grade="gradeA";
                       }
-                      else if($Produit["prix de vente"] < $Produit["prix d'achat"]{
+                      else if($Produit["prix de vente"] < $Produit["prix d'achat"]){
                         $grade="gradeX";
                       }
                       else{
                         $grade="gradeW";
                       }
-                      echo"
-                      <tr class=".$grade.">
-                        <td class="center">$Produit["nom"]</td>
-                        <td class="center">$Produit["catégorie"]</td>
-                        <td class="center ">$Produit["prix de vente"]</td>
-                        <td class="center ">$Produit["fournisseur"]</td>
-                        <td class="center ">$Produit["marge"]</td>
-                        <td class="center ">$Produit["prix d'achat"]</td>
-                        <td class="center hidden-phone">$Produit["descriptif"]</td>
-                      </tr>"
+                      echo'
+                      <tr class='.$grade.'>
+                        <td class=\"center\">'.$Produit["nom"].'</td>
+                        <td class=\"center\">'.$Produit["catégorie"].'</td>
+                        <td class=\"center\">'.$Produit["prix de vente"].'</td>
+                        <td class=\"center\">'.$Produit["fournisseur"].'</td>
+                        <td class=\"center\">'.$Produit["marge"].'</td>
+                        <td class=\"center\">'.$Produit["prix d'achat"].'</td>
+                        <td class=\"center hidden-phone\">'.$Produit["descriptif"].'</td>
+                      </tr>';
                     }
-                  <?>  
+                  ?>  
                 </tbody>
               </table>
             </div>
