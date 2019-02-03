@@ -93,6 +93,3 @@
 </footer>
 </body>
 </html>
-<?php
-	mysqli_close($Connect);
-?>

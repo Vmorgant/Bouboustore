@@ -2,7 +2,6 @@
 
 $dev = true;
 
-include_once '../connect.php';
 $Nom=$_POST['nom'];
 $Descriptif=$_POST['descriptif'];
 $Commentaire=$_POST['commentaire'];
