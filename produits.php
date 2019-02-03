@@ -3,15 +3,11 @@ include_once 'connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<body>
-  <section id="container">
-      <?php
-        include_once 'header.html';
-      ?>
+  <?php
+    include("header.html");
+  ?>
+  
 
-      <?php
-        include_once 'aside.html';
-      ?>
    
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
@@ -79,13 +75,14 @@ include_once 'connect.php';
     <!-- /MAIN CONTENT -->
     <!--main content end-->
       <?php
-        include_once 'footer.html';
+        include("footer.html");
       ?>
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="js/general.js"></script>
   <script type="text/javascript" language="javascript" src="lib/advanced-datatable/js/jquery.js"></script>
+  <script src="js/src/jquery.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="lib/jquery.scrollTo.min.js"></script>

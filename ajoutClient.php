@@ -4,19 +4,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
-<body>
-<header id="header">
-    <?php
+  <?php
     include("header.html");
-    ?>
-</header>
-
-<aside id="asideJS">
-    <?php
-    include("aside.html");
-    ?>
-</aside>
+  ?>
 
     <section id="container">
         <header id="header"></header>
@@ -88,9 +78,9 @@
         </div>                      
         </section>
         <footer id="footer site-footer  ">
-            <?php
-            include("footer.html");
-            ?>
+      <?php
+        include("footer.html");
+      ?>
         </footer>
     </body>
 </html>

@@ -14,19 +14,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<body>
-  <section id="container">
-    <header id="header">
-        <?php
-        include("header.html");
-        ?>
-    </header>
-      
-    <aside id="asideJS">
-        <?php
-        include("aside.html");
-        ?>
-    </aside>
+  <?php
+    include("header.html");
+  ?>
 
     <section id="main-content">
       <section class="wrapper">
@@ -221,11 +211,9 @@
     </section>
     <!--main content end-->
     <!--footer start-->
-    <footer id="footer site-footer  ">
-        <?php
+      <?php
         include("footer.html");
-        ?>
-    </footer>
+      ?>
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
@@ -245,6 +233,7 @@
     var myDoughnut = new Chart(document.getElementById("newchart").getContext("2d")).Doughnut(doughnutData);
   </script>
 
+  <script src="js/src/jquery.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="lib/jquery.scrollTo.min.js"></script>

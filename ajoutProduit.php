@@ -4,19 +4,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<body>
-<section id="container">
-    <header id="header">
-        <?php
-        include("header.html");
-        ?>
-    </header>
-
-    <aside id="asideJS">
-        <?php
-        include("aside.html");
-        ?>
-    </aside>
+  <?php
+    include("header.html");
+  ?>
    
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
@@ -96,11 +86,11 @@
         </section>
     </section>
 </section>
-          <footer id="footer site-footer  ">
-              <?php
-              include("footer.html");
-              ?>
-          </footer>
+<footer id="footer site-footer  ">
+      <?php
+        include("footer.html");
+      ?>
+</footer>
 </body>
 </html>
 <?php
