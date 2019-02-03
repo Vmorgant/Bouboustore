@@ -1,5 +1,5 @@
 <?php
-
+include_once '../connect.php';
 $dev = true;
 
 $Nom=$_POST['nom'];
@@ -10,10 +10,6 @@ $Categorie= $_POST['choixCategorie'];
 $Fournisseur= $_POST['choixFournisseur'];
 $Prix= $_POST['prix'];
 $Devise= $_POST['choixDevise'];
-
-$QueryAjout = "INSERT INTO `produit`(`nom`, `descriptif`, `commentaire`, `image`, `categorie`) VALUES ('".$Nom."','".$Descriptif."','".$Commentaire."','".$Image."','".$Categorie."')";
-$Result= $Connect->query($QueryAjout);
-
 
 // Verification de l'existance du produit
 $QuerySelectNom = 'SELECT * FROM  produit WHERE nom=\''.$Nom.'\';';
@@ -34,8 +30,6 @@ if ($responseSelectNom->num_rows!=0){
     }
     $idCategorie = $Connect->query($QuerySelectCategorie)->fetch_all()[0][0];
     if ($dev) {echo '<br>$idCategorie = '.$idCategorie.'<br><br>';}
-
-
     // Verification de l'existance du fournisseur
     $QuerySelectFournisseur = 'SELECT id_fournisseur FROM  fournisseur WHERE nom=\''.$Fournisseur.'\';';
     $idFournisseur = $Connect->query($QuerySelectFournisseur);
@@ -75,6 +69,8 @@ if($DeviseList==NULL){
     $QueryDevise = "SELECT DISTINCT `id_devise` FROM `devise` WHERE `abreviation`== '".$choixDevise."'";
     $DeviseList= $Connect->query($QueryDevise);
 }
-
+$QueryAjout = "INSERT INTO `produit`(`nom`, `descriptif`, `commentaire`, `image`, `id_categorie`) VALUES('".$Nom."','".$Descriptif."','".$Commentaire."','".$Image."','".$idCategorie."')";
+$InsertProd= $Connect->query($QueryAjout);
+echo $QueryAjout;
 header("location:../ajoutProduit.php");
 ?>
