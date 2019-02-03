@@ -52,12 +52,12 @@ include_once 'connect.php';
                       echo'
                       <tr class='.$grade.'>
                         <td class=\"center\">'.$Produit["nom"].'</td>
-                        <td class=\"center\">'.utf8_encode($Produit["catégorie"]).'</td>
+                        <td class=\"center\">'.$Produit["catégorie"]).'</td>
                         <td class=\"center\">'.$Produit["prix de vente"].'</td>
                         <td class=\"center\">'.$Produit["fournisseur"].'</td>
                         <td class=\"center\">'.$Produit["marge"].'</td>
                         <td class=\"center\">'.$Produit["prix d'achat"].'</td>
-                        <td class=\"center hidden-phone\">'.utf8_encode($Produit["descriptif"]).'</td>
+                        <td class=\"center hidden-phone\">'.$Produit["descriptif"].'</td>
                       </tr>';
                     }
                   ?>  
