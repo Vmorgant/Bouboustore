@@ -12,17 +12,18 @@
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
+  <section id="container">
     <section id="main-content">
         <section class="wrapper">
             <h3><i class="fa fa-angle-right"></i> Ajout de Produit </h3>
         <div class="row mb table-sized"> 
-		<div> 
+		<div class="col-lg-9 main-chart">
 				<form action="back/traitementProduit.php" method="post">
-                    <p>Nom : <input type="text" name="nom" required /></p>
-                    <p>Descriptif: <input type="text" name="descriptif" /></p>
-                    <p>Commentaire: <input type="text" name="commentaire" /></p>
-                    <p>Image: <input type="text" name="image" /></p>
-                    <p>Categorie : <input list="categorie" type="text" name="choixCategorie" id="choixCategorie" required></p>
+                    <div class="field" ><p>Nom : </p><input type="text" name="nom" required /></div>
+                    <div class="field" ><p>Descriptif: </p><input type="text" name="descriptif" /></div>
+                    <div class="field" ><p>Commentaire: </p><input type="text" name="commentaire" /></div>
+                    <div class="field" ><p>Image: </p><input type="text" name="image" /></div>
+                    <div class="field" ><p>Categorie : </p><input list="categorie" type="text" name="choixCategorie" id="choixCategorie" required></div>
                         <datalist id="categorie">	
                                 <?php
                                     $QueryCategorie = "SELECT DISTINCT `categorieProduit` FROM `categorie`";
@@ -32,8 +33,8 @@
                                     }
                                 ?>
 						</datalist>
-						
-						<p>Fournisseur : <input list="fournisseur" type="text" name="choixFournisseur" id="choixFournisseur" required></p>
+
+                    <div class="field" ><p>Fournisseur : </p><input list="fournisseur" type="text" name="choixFournisseur" id="choixFournisseur" required></div>
                         <datalist id="fournisseur">	
                                 <?php
                                     $QueryFournisseur = "SELECT DISTINCT `nom` FROM `fournisseur`";
@@ -44,8 +45,8 @@
                                     }
                                 ?>
 						</datalist>
-					<p>Prix achat: <input type="number" name="prix" required /></p>
-					<p>Devise : <input list="devise" type="text" name="choixDevise" id="choixDevise" required></p>
+                    <div class="field" ><p>Prix achat: </p><input type="number" name="prix" required /></div>
+                    <div class="field" ><p>Devise : </p><input list="devise" type="text" name="choixDevise" id="choixDevise" required></div>
                         <datalist id="devise">	
                                 <?php
                                     $QueryDevise = "SELECT DISTINCT `abreviation` FROM `devise`";
@@ -58,13 +59,10 @@
 					<p><input type="submit" value="Valider" name = "Valider"></p>
 				</form>
         </div>
-        </section>
-    </section>
+        </div>
 
-    <section id="main-content">
-        <section class="wrapper">
             <h3><i class="fa fa-angle-right"></i> Nos produits </h3>
-            <div class="adv-table">
+            <div class="adv-table myTable">
                 <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info"> 
                 <thead>
                   <tr>
@@ -85,6 +83,7 @@
             </div>
         </section>
     </section>
+  </section>
 </section>
 <footer id="footer site-footer  ">
       <?php

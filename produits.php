@@ -63,7 +63,7 @@ include_once 'connect.php';
                   ?>  
                 </tbody>
               </table>
-            </div>
+            </div>  
           </div>
           <!-- page end-->
         </div>

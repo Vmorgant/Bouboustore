@@ -12,7 +12,7 @@ Website: http://Alvarez.is/
 */
 
 /* Import fonts */
-@import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Ruda:400,700,900);
 
 /* BASIC THEME CONFIGURATION */
 body {
@@ -22,6 +22,9 @@ body {
     padding: 0px !important;
     margin: 0px !important;
     font-size:13px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 ul li {
@@ -400,6 +403,7 @@ ul.sidebar-menu li a.active i {
 /* MAIN CONTENT CONFIGURATION */
 #main-content {
     margin-left: 210px;
+    flex: 1 0 auto;
 }
 
 .header, .footer {
@@ -965,10 +969,10 @@ PANELS CONFIGURATIONS
 }
 
 /* Dark Blue*/
-
 .darkblue-panel {
 	text-align: center;
-	background: #444c57;
+    background: #444c57; 
+    color: #fafafa; 
 }
 .darkblue-panel .darkblue-header {
 	background: transparent;
@@ -3483,4 +3487,20 @@ ul.chat-available-user li a:hover {
 
 #copyrights a {
   color: #fff;
+}
+
+.myTable {
+    background-color: #fff;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+}
+
+.field input, .field select {
+    width: 150px;
 }
